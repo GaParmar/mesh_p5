@@ -58,8 +58,6 @@ function draw(){
 		data = Delaunay.triangulate(allParticles.map(function(pt){
 			return [pt.pos.x, pt.pos.y];
 		}));
-		console.log('DELAUNAY DATA');
-		console.log(data);
 
 		strokeWeight(0.1);
 
@@ -90,6 +88,7 @@ function draw(){
 	fill(255);
 }
 
-function mouseDragged(){
-	allParticles.push(new Particle(mouseX, mouseY, maxLevel))
+
+function mouseMoved(){
+	allParticles.push(new Particle(random(windowWidth), random(windowHeight), maxLevel))
 }
